@@ -70,7 +70,8 @@ void demoSomeStringArrayThings()
 	//"Running in the 90s"
 	//};
 
-
+	//const int NUMBER_OF_ELEMENTS = 3; 
+	//int someArray[NUMBER_OF_ELEMENTS] = { 1, 2, 3 };
 
 	std::cout << "The FIRST viral song is: " << viralSongs.at(0) << "\n";
 	std::cout << "The LAST viral song is: " << viralSongs.at(viralSongs.size() - 1) << "\n";
