@@ -45,7 +45,7 @@ int main()
 
 	//ANOTHER way to find the minimum: 
 	float minimumFoundAnotherWay = *std::min_element(temperatureList.begin(), temperatureList.end());
-	//the asterisk is called the "dereferencing operator!
+	//the asterisk is called the "dereferencing operator" (and is used on "pointer" data types -> memory addresses)
 
 	std::cout << "\n\nIs it correct? " << minimumFoundAnotherWay << "\n";
 
