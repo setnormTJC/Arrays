@@ -15,5 +15,9 @@ namespace Bingo
 	bingoCard generateRandomBingoCard(); //function declaration (not a definition) 
 
 
-	void printBingoCard(const bingoCard& theBingoCard);
+
+
 }
+
+std::vector<std::vector<int>> getTranspose(const std::vector<std::vector<int>>& originalMatrix);
+void printMatrix(const std::vector<std::vector<int>>& theMatrix);

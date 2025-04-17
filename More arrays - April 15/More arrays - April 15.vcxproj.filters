@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="More arrays - April 15.cpp">
+    <ClCompile Include="bingoMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="libraryOfBingoFunctions.cpp">

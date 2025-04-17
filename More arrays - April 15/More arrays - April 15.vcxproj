@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="libraryOfBingoFunctions.cpp" />
-    <ClCompile Include="More arrays - April 15.cpp" />
+    <ClCompile Include="bingoMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libraryOfBingoFunctions.h" />
