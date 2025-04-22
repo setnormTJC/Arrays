@@ -17,6 +17,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "April10", "April10\April10.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "More arrays - April 15", "More arrays - April 15\More arrays - April 15.vcxproj", "{B920F44B-3512-4B4A-98EB-C3C756CB8784}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Colored terminal text ASCII art demo - AI generated", "Colored terminal text ASCII art demo - AI generated\Colored terminal text ASCII art demo - AI generated.vcxproj", "{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Student sandwich thing", "Student sandwich thing\Student sandwich thing.vcxproj", "{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +85,22 @@ Global
 		{B920F44B-3512-4B4A-98EB-C3C756CB8784}.Release|x64.Build.0 = Release|x64
 		{B920F44B-3512-4B4A-98EB-C3C756CB8784}.Release|x86.ActiveCfg = Release|Win32
 		{B920F44B-3512-4B4A-98EB-C3C756CB8784}.Release|x86.Build.0 = Release|Win32
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Debug|x64.ActiveCfg = Debug|x64
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Debug|x64.Build.0 = Debug|x64
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Debug|x86.Build.0 = Debug|Win32
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Release|x64.ActiveCfg = Release|x64
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Release|x64.Build.0 = Release|x64
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Release|x86.ActiveCfg = Release|Win32
+		{FE2AB05D-C830-4856-ACC6-EDB1FE655F1B}.Release|x86.Build.0 = Release|Win32
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Debug|x64.ActiveCfg = Debug|x64
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Debug|x64.Build.0 = Debug|x64
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Debug|x86.ActiveCfg = Debug|Win32
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Debug|x86.Build.0 = Debug|Win32
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Release|x64.ActiveCfg = Release|x64
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Release|x64.Build.0 = Release|x64
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Release|x86.ActiveCfg = Release|Win32
+		{BEC6590E-DD93-45D0-A4E5-0C7A5480E259}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

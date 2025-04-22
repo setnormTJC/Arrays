@@ -36,31 +36,32 @@ void demoTransposingAMatrix()
 int main()
 {
 	auto mySpecialBingoCard = Bingo::generateRandomBingoCard();
-
-
+	//std::cout << "The data type of `mySpecialBingoCard` is: " << typeid(mySpecialBingoCard).name() << "\n";
 	auto transposedCard = getTranspose(mySpecialBingoCard); 
 
 	//let's suppose that the first B on the player's card gets called
 	transposedCard.at(0).at(0) = -99; 
 
-	char character = 'Z';
-
-	std::cout << "\033[31m" << character << "\033[0m"; 
-	// Red color -> consider using to indicate that a spot on player's card was called
-
-	constexpr int PADDING = 5; 
-	std::cout << std::left << std::setw(PADDING) << "B";
-	std::cout << std::left << std::setw(PADDING) << "I";
-	std::cout << std::left << std::setw(PADDING) << "N";
-	std::cout << std::left << std::setw(PADDING) << "G";
-	std::cout << std::left << std::setw(PADDING) << "O";
-	std::cout << "\n";
 	printMatrix(transposedCard);
 
-	//printMatrix(mySpecialBingoCard); 
+	bool thatsABingo = false; //"Inglourious Basterds" reference here
+
+	while (!thatsABingo)
+	{
+		//call random numbers (between 1 and 99), check if they're on the card, and then check for win: 
+		int currentRandomNumber;// = 7; //this would be called "B7" in a real BINGO game 
+		std::cout << "Enter the number, bingo master (1 - 99)\n";
+		std::cin >> currentRandomNumber;
+
+		Bingo::checkIfNumberIsOnCard(transposedCard, currentRandomNumber);
 
 
-	//demoTransposingAMatrix(); 
-	
+		printMatrix(transposedCard); 
+
+		std::cout << "Any key to continue\n";
+		std::cin.get(); 
+
+		thatsABingo = Bingo::checkIfThatsABingo(transposedCard);
+	}
 }
 

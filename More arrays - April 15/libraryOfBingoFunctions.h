@@ -14,8 +14,10 @@ namespace Bingo
 	*/
 	bingoCard generateRandomBingoCard(); //function declaration (not a definition) 
 
+	/*this function MODIFIES the bingo card if the number is found*/
+	void checkIfNumberIsOnCard(bingoCard& theCard, const int numberToSearchFor);
 
-
+	bool checkIfThatsABingo(const bingoCard& theCard);
 
 }
 
