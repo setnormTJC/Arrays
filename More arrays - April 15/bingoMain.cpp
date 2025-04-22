@@ -42,6 +42,7 @@ int main()
 	//let's suppose that the first B on the player's card gets called
 	transposedCard.at(0).at(0) = -99; 
 
+	std::cout << "Initial card\n";
 	printMatrix(transposedCard);
 
 	bool thatsABingo = false; //"Inglourious Basterds" reference here
@@ -55,7 +56,6 @@ int main()
 
 		Bingo::checkIfNumberIsOnCard(transposedCard, currentRandomNumber);
 
-
 		printMatrix(transposedCard); 
 
 		std::cout << "Any key to continue\n";
@@ -63,5 +63,7 @@ int main()
 
 		thatsABingo = Bingo::checkIfThatsABingo(transposedCard);
 	}
+
+	std::cout << "\n\nWon!\n";
 }
 

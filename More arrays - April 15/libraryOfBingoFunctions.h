@@ -19,7 +19,13 @@ namespace Bingo
 
 	bool checkIfThatsABingo(const bingoCard& theCard);
 
+	bool checkForMainDiagonalWin(const bingoCard& theCard);
+
+	bool checkForHorizontalWin(const bingoCard& theCard);
+
 }
 
 std::vector<std::vector<int>> getTranspose(const std::vector<std::vector<int>>& originalMatrix);
 void printMatrix(const std::vector<std::vector<int>>& theMatrix);
+
+void printRow(const std::vector<int>& row); 

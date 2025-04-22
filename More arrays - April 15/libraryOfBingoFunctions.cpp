@@ -65,22 +65,135 @@ bool Bingo::checkIfThatsABingo(const bingoCard& theCard)
 	bool thatsABingo = false; 
 
 	//one way to win: along main diagonal 
-	for (int row = 0; row < theCard.size(); ++row)
-	{
-		int currentNumber = theCard[row][0]; 
-		for (int col = 1; col < theCard.at(0).size(); ++col)
-		{
-			if (theCard[row][col] == currentNumber)
-			{
-				//... peters out for now
-			}
-		}
-	}
-	//another way: horizontally: 
+	bool wonOnMainDiagonal = checkForMainDiagonalWin(theCard); 
 
+	//another way: horizontally: 
+	bool wonOnHorizontal = checkForHorizontalWin(theCard); 
+	
 	//another way: diagonally: 
 
+	if (wonOnMainDiagonal || wonOnHorizontal /*etc.*/)
+		thatsABingo = true; 
+
 	return thatsABingo; 
+}
+
+bool Bingo::checkForMainDiagonalWin(const bingoCard& theCard)
+{
+	//"hard-coded" way: 
+	//if (theCard[0][0] == theCard[1][1]
+	//	&&
+	//	theCard[1][1] == theCard[2][2]
+	//	&&
+	//	theCard[2][2] == theCard[3][3]
+	//	&&
+	//	theCard[3][3] == theCard[4][4]
+	//	)
+	//{
+	//	return true;
+	//}
+
+	//else
+	//{
+	//	return false; 
+	//}
+
+	//what if the "bingo" card were a 100 by 100 grid ....? 
+
+	//for (int i = 0; i < theCard.size() - 1; ++i) //note the -1 
+	//{
+	//	for (int j = 0; j < theCard.at(0).size() - 1; ++j)
+	//	{
+	//		if (i == j) //only do the check below for elements on same row and column 
+	//		{
+	//			//if it is ever the case that there is a "mismatch", immediately return false
+	//			if (theCard[i][j] != theCard[i + 1][j + 1]) //note the != 
+	//			{
+	//				std::cout << theCard[i][j] << " does not match " << theCard[i + 1][j + 1] << "\n";
+	//				return false; 
+	//			}
+	//		}
+	//	}
+	//}
+
+	////if we get all the way through the matrix and never find a "mismatch", return true 
+	//return true; 
+
+	/*A more efficent approach - no nested loop*/
+	for (int i = 0; i < theCard.size() - 1; ++i)
+	{
+		if (theCard[i][i] != theCard[i + 1][i + 1]) //note the [i][i]
+		{
+			//std::cout << theCard[i][i] << " does not match " << theCard[i + 1][i + 1] << "\n";
+			return false; 
+		}
+	}
+
+	return true; 
+}
+
+bool Bingo::checkForHorizontalWin(const bingoCard& theCard)
+{
+	///*first, a (goofy) hardcoded way:*/
+	//bool gameWonHorizontally = false; 
+
+	//for (int row = 0; row < theCard.size(); ++row)
+	//{ 
+	//	if (! //note the NOT!
+	//			(theCard[row][0] == theCard[row][1]
+	//			&&
+	//			theCard[row][1] == theCard[row][2]
+	//			&&
+	//			theCard[row][2] == theCard[row][3]
+	//			&&
+	//			theCard[row][3] == theCard[row][4]
+	//			)
+	//		)
+	//	{
+	//		std::cout << "Not all numbers match in following row (so no horizontal win):\n";
+	//		printRow(theCard[row]);
+	//	}
+
+	//	else
+	//	{
+	//		gameWonHorizontally = true; 
+	//		break; 
+	//	}
+	//}
+
+	//return gameWonHorizontally;
+
+
+	//less goofy way (expands to arbitrary dimensions): 
+
+	bool wonAlongCurrentRow = true;
+
+	for (int row = 0; row < theCard.size(); ++row)
+	{
+		wonAlongCurrentRow = true; //resets for each row 
+
+		for (int col = 0; col < theCard.at(row).size() - 1; ++col) //note the -1
+		{
+			if (theCard[row][col] != theCard[row][col + 1])
+			{
+				wonAlongCurrentRow = false; 
+				break; //waste no more time examining other elements in row 
+			}
+		}
+
+		if (wonAlongCurrentRow) 
+		{
+			break; //this breaks from the OUTER loop
+		}
+
+		else //optional print for visualization - delete this else once satisfied
+		{
+			std::cout << "Mismatch in row: ";
+			printRow(theCard[row]);
+		}
+	}
+
+	return wonAlongCurrentRow; 
 }
 
 
@@ -125,4 +238,11 @@ void printMatrix(const std::vector<std::vector<int>>& theMatrix)
 		}
 		std::cout << "\n"; //newline to separate rows
 	}
+}
+
+void printRow(const std::vector<int>& row)
+{
+	for (const int number : row)
+		std::cout << number << ", ";
+	std::cout << "\n";
 }
